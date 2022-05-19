@@ -11,7 +11,7 @@ import { useRecoilValue } from 'recoil'
 import Modal from '../components/Modal'
 
 interface Props {
-  randomShow: Show[]
+  randomShow: Show
   actionShows: Show[]
   adventureShows: Show[]
   comedyShows: Show[]
@@ -24,7 +24,7 @@ interface Props {
   documentaries: Movie[] */
   /* products: Product[] */
 }
-const Home: NextPage = ({ 
+const Home = ({ 
   randomShow,
   actionShows,
   adventureShows,
