@@ -18,7 +18,7 @@ function Modal() {
     const [muted, setMuted] = useState(true)
     //console.log(show?.id)
 
-    const cleanText = (text: string) => {
+    const cleanText = (text: string | undefined) => {
         if (text){
             return text.replace(/<[^>]*>?/gm, '')
         }

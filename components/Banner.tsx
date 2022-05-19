@@ -9,7 +9,7 @@ import { useRecoilState } from 'recoil'
 import { modalState, movieState } from '../atoms/modalAtom'
 
 interface Props {
-    randomShow?: Show[]
+    randomShow?: Show
 }
 function Banner({ randomShow }: Props) {
 
@@ -30,7 +30,7 @@ function Banner({ randomShow }: Props) {
 
    // console.log(movie)
 
-   const cleanText = (text: string) => {
+   const cleanText = (text: string | undefined) => {
     if (text){
         return text.replace(/<[^>]*>?/gm, '')
     }

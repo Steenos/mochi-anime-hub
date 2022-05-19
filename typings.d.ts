@@ -27,11 +27,11 @@ export interface Genre {
     banner_image?: string  | StaticImport
     cover_color: string
     cover_image?: string | StaticImport
-    descriptions: object
+    descriptions: {en: string; rj: string}
     episode_duration: number
     has_cover_image: boolean
     id: number
-    titles: object
+    titles: {en: string; rj: string}
     trailer_url?: string 
     score: number
     genres: string[]
