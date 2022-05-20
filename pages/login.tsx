@@ -34,13 +34,13 @@ function login() {
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <Image
-        src="https://rb.gy/p2hphi"
+        src="/39033.png"
         layout="fill"
         className="-z-10 !hidden opacity-60 sm:!inline"
         objectFit="cover"
       />
       <img
-        src="https://rb.gy/ulxxee"
+        src="../mochilogo.png"
         className="absolute left-4 top-4 cursor-pointer object-contain md:left-10 md:top-6"
         width={150}
         height={150}
@@ -69,7 +69,7 @@ function login() {
           <button 
             onClick={() => setLogin(true)}
             type="submit" 
-            className='w-full rounded bg-[#e50914] font-semibold'>Sign In</button>
+            className='w-full rounded cottonCandy font-semibold'>Sign In</button>
 
           <div className='text-[gray]'>
               New to Netflix?{' '}

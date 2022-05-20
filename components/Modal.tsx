@@ -97,7 +97,7 @@ function Modal() {
                         </button>
 
                         <button className='modalButton'>
-                            <ThumbUpIcon className='h-7 w-7'/>
+                            <ThumbUpIcon className='h-7 w-7 hover:animate-pulse'/>
                         </button>
                     </div>
 

@@ -19,7 +19,7 @@ function Thumbnail({show}: Props) {
       
       
       
-      
+        <div className='flex-col'>
           <div className='relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105 '
              onClick={() => {
               setCurrentMovie(show)
@@ -35,6 +35,10 @@ function Thumbnail({show}: Props) {
                 className="rounded-sm object-cover md:rounded"
                 layout="fill"
             />
+            <p className='z-10 absolute px-2 bottom-0 text-white text-sm truncate max-w-[180px]'>{show?.titles.en || show?.titles.rj}</p>
+            <div className='absolute bg-gradient-to-t from-black/70 w-full h-full overflow-hidden'></div>
+          </div>
+          
           </div>
 
           {/* <div className="hidden group-hover:block rounded-b-md h-28 min-w-[180px] bg-slate-800 duration-200
