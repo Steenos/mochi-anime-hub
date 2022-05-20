@@ -72,7 +72,7 @@ function login() {
             className='w-full rounded cottonCandy font-semibold'>Sign In</button>
 
           <div className='text-[gray]'>
-              New to Netflix?{' '}
+              New to Mochi?{' '}
               <button onClick={() => setLogin(false)} type="submit" className='text-white hover:underline'>Sign up now</button>
           </div>
       </form>
