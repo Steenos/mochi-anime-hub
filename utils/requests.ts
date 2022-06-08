@@ -1,11 +1,11 @@
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY
 //const BASE_URL = 'https://api.themoviedb.org/3'
-const BASE_URL = 'https://api.aniapi.com'
+const BASE_URL = 'https://api.jikan.moe/v4'
 
 const requests = {
-    fetchRandomShow: `${BASE_URL}/v1/random/anime/1/false`,
-    fetchActionShows: `${BASE_URL}/v1/anime?formats=0,1&genres=Action&nsfw=false&with_episodes=true`,
-    fetchAdventureShows: `${BASE_URL}/v1/anime?formats=0,1&genres=Adventure&nsfw=false&with_episodes=true`,
+    fetchRandomShow: `${BASE_URL}/random/anime`,
+    fetchTopAnime: `${BASE_URL}/top/anime`,
+    fetchRecentlyAdded: `${BASE_URL}/recommendations/anime`,
     fetchComedyShows: `${BASE_URL}/v1/anime?formats=0,1&genres=Comedy&nsfw=false&with_episodes=true`,
     fetchDramaShows: `${BASE_URL}/v1/anime?formats=0,1&genres=Drama&nsfw=false&with_episodes=true`,
     fetchFantasyShows: `${BASE_URL}/v1/anime?formats=0,1&genres=Fantasy&nsfw=false&with_episodes=true`,

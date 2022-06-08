@@ -41,17 +41,17 @@ function Banner({ randomShow }: Props) {
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
         <div className='absolute top-0 left-0 -z-10 h-[95vh] w-screen '>
             <Image /* src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`} */
-            src={`${randomShow?.banner_image || randomShow?.cover_image}`}
+            src={`${randomShow?.images?.jpg?.large_image_url}`}
             layout="fill"
             objectFit="cover"
             />
         </div>
 
         <h1 className='font-bold text-2xl lg:text-7xl md:text-4xl'>
-            {randomShow?.titles.rj || randomShow?.titles.en}
+            {randomShow?.title_english || randomShow?.title_japanese}
         </h1>
         <p className="line-clamp-3 max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">
-            {cleanText(randomShow?.descriptions.en)}
+            {cleanText(randomShow?.synopsis)}
         </p>
 
         <div className="flex space-x-3">

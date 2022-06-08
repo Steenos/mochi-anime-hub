@@ -12,8 +12,8 @@ import Modal from '../components/Modal'
 
 interface Props {
   randomShow: Show
-  actionShows: Show[]
-  adventureShows: Show[]
+  topAnime: Show[]
+  recentlyAdded: Show[]
   comedyShows: Show[]
   /* trendingNow: Movie[]
   topRated: Movie[]
@@ -24,21 +24,21 @@ interface Props {
   documentaries: Movie[] */
   /* products: Product[] */
 }
-const Home = ({ 
+const Home = ({
   randomShow,
-  actionShows,
-  adventureShows,
-  comedyShows,
+  topAnime,
+  recentlyAdded,
+}: //comedyShows,
 
-  /* actionMovies,
+/* actionMovies,
   comedyMovies,
   documentaries,
   horrorMovies,
   romanceMovies,
   topRated,
   trendingNow, */
- /*  products, */
- }: Props) => {
+/*  products, */
+Props) => {
   /* console.log(randomShow) */
 
   //const { loading } = useAuth()
@@ -51,19 +51,18 @@ const Home = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header/>
+      <Header />
 
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
-        <Banner randomShow={randomShow}/>
+        <Banner randomShow={randomShow} />
         <section className="md:space-y-24">
-          <Row title="Action" shows={actionShows}/>
-          <Row title="Adventure" shows={adventureShows}/>
-          <Row title="Comedies" shows={comedyShows}/>
+          <Row title="Top Anime" shows={topAnime} />
+          {/* <Row title="Recently Added" shows={recentlyAdded} /> */}
+          {/*<Row title="Comedies" shows={comedyShows}/> */}
         </section>
       </main>
-     {/*  Modal */}
+      {/*  Modal */}
       {showModal && <Modal />}
-     
     </div>
   )
 }
@@ -71,7 +70,7 @@ const Home = ({
 export default Home
 
 export const getServerSideProps = async () => {
-/*   const products = await getProducts(payments, {
+  /*   const products = await getProducts(payments, {
     includePrices: true,
     activeOnly: true,
   })
@@ -80,9 +79,10 @@ export const getServerSideProps = async () => {
  */
   const [
     randomShow,
-    actionShows,
-    adventureShows,
-    comedyShows,
+    topAnime,
+    /* recentlyAdded, */
+    //adventureShows,
+    //comedyShows,
     /* trendingNow,
     topRated,
     actionMovies,
@@ -92,9 +92,9 @@ export const getServerSideProps = async () => {
     documentaries, */
   ] = await Promise.all([
     fetch(requests.fetchRandomShow).then((res) => res.json()),
-    fetch(requests.fetchActionShows).then((res) => res.json()),
-    fetch(requests.fetchAdventureShows).then((res) => res.json()),
-    fetch(requests.fetchComedyShows).then((res) => res.json()),
+    fetch(requests.fetchTopAnime).then((res) => res.json()),
+    /* fetch(requests.fetchRecentlyAdded).then((res) => res.json()), */
+    //fetch(requests.fetchComedyShows).then((res) => res.json()),
     /*fetch(requests.fetchComedyMovies).then((res) => res.json()),
     fetch(requests.fetchHorrorMovies).then((res) => res.json()),
     fetch(requests.fetchRomanceMovies).then((res) => res.json()),
@@ -103,10 +103,11 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      randomShow: randomShow.data[0],
-      actionShows: actionShows.data.documents.slice(0,20),
-      adventureShows: adventureShows.data.documents.slice(0,20),
-      comedyShows: comedyShows.data.documents.slice(0,20),
+      randomShow: randomShow?.data,
+      topAnime: topAnime?.data,
+      /*  recentlyAdded: recentlyAdded?.data, */
+      //adventureShows: adventureShows.data.documents.slice(0,20),
+      //comedyShows: comedyShows.data.documents.slice(0,20),
       /* trendingNow: trendingNow.results,
       topRated: topRated.results,
       actionMovies: actionMovies.results,

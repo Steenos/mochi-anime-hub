@@ -12,6 +12,7 @@
     "@mui/material": "^5.8.0",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
+    "@videojs/http-streaming": "^2.14.2",
     "firebase": "^9.8.1",
     "heroicons": "^1.0.6",
     "next": "latest",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
+    "@types/video.js": "^7.3.40",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
